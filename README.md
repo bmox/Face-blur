@@ -1,4 +1,4 @@
-# Face-blur
+# mediapipe blur face python
 <p align="center">
   <img src="https://github.com/bmox/Face-blur/blob/main/demo/demo.gif" alt="animated" />
 </p>
