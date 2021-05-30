@@ -70,7 +70,7 @@ class FaceDetector:
         return img
 
 
-def main(detectionConfidence,blur_size):
+def main(detectionConfidence,blur_size,flip_the_video):
     global folder_path
     global input_file_path
     input_file = input_file_path
@@ -101,7 +101,10 @@ def main(detectionConfidence,blur_size):
     while ret:
 
         success, img = cap.read()
-        img = cv2.flip(img, 1)
+        if flip_the_video =="Yes":
+            img = cv2.flip(img, 1)
+        elif flip_the_video == "No":
+            pass
         try:
             img = detector.findFaces(img, True)
         except Exception as e:
@@ -128,9 +131,10 @@ def main(detectionConfidence,blur_size):
 if __name__ == "__main__":
     detectionConfidence = st.slider("Face Detection Confidence")
     blur_size = st.slider("Blur pixel size in face")
+    flip_the_video = st.selectbox("Horizontally flip video ",("Yes","No"))
     if st.button("Start Face Blur"):
         if flag:
-            main(detectionConfidence,blur_size)
+            main(detectionConfidence,blur_size,flip_the_video)
             st.markdown(f"## Face blur complete check your export folder")
 
             for i in os.listdir("./temp/"):
