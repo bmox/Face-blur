@@ -30,3 +30,10 @@ Realtime face blur using webcam
 ```
 python webcam.py
 ```
+
+# Blur face and Change background
+```
+streamlit run face_blur_and_background_change.py --server.maxUploadSize=5000
+```
+![Demo](https://github.com/bmox/mediapipe-blur-face-python/blob/main/demo/test.png)
+
