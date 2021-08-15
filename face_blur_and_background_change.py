@@ -10,7 +10,7 @@ import uuid
 
 
 
-st.title("Face blur")
+st.title("Face Blur & Background Change")
 try:
     os.mkdir("temp")
 except:
